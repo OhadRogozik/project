@@ -14,11 +14,11 @@ namespace project
 {
     public class EnemyP2 : Enemy
     {
-        private int speed;
-        private int hp;
-        private int x;
-        private int y;
-        private int movement;
+        protected int speed;
+        protected int hp;
+        protected int x;
+        protected int y;
+        protected int movement;
         public EnemyP2(int speed, int hp, int x, int y,int movement) : base(speed, hp,x,y)
         {
             this.movement = movement;

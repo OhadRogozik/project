@@ -165,7 +165,12 @@ namespace project
                         if(shootsList[i].getY() > enemyList[j].getY() && shootsList[i].getY() < enemyList[j].getY() + 65)
                         {
                             shootsList.RemoveAt(i);
-                            enemyList.RemoveAt(j);
+                            enemyList[j].setHP(enemyList[j].getHP()-1);
+                            if (enemyList[j].getHP()==0)
+                            {
+                                enemyList.RemoveAt(j);
+                                enemyList.Add(new Enemy(1, 2, 0, 0));
+                            }
                         }
                     }
                 }
@@ -233,7 +238,7 @@ namespace project
                     if (e.GetY() >= cH - 110 && e.GetY() < cH - 70)
                     {
                         //right
-                        if (x1 < cW-20)
+                        if (x1 < cW-90)
                         {
                             x1 = x1 + 20;
                         }
@@ -245,7 +250,7 @@ namespace project
                     if (e.GetY() >= cH - 70 && e.GetY() < cH - 10)
                     {
                         //down
-                        if(y1<cH-20)
+                        if(y1<cH-90)
                         {
                             y1 = y1 + 20;
                         }

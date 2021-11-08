@@ -14,10 +14,10 @@ namespace project
 {
     public class EnemyP1 : Enemy
     {
-        private int speed;
-        private int hp;
-        private int x;
-        private int y;
+        protected int speed;
+        protected int hp;
+        protected int x;
+        protected int y;
         public EnemyP1(int speed, int hp,int x,int y):base(speed,hp,x,y)
         {
             
