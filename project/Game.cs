@@ -47,7 +47,7 @@ namespace project
                 x1 = canvas.Width / 2-25;
                 y1 = canvas.Height / 2-35;
                 b = false;
-                enemyList.Add(new Enemy(1, 2, 0, 0));
+                enemyList.Add(new Enemy(1, 2, 20, 20));
             }
             canvas.DrawRect(x1,y1,x1+70,y1+70,p3);//character
             for (int i = 0; i < enemyList.Count; i++)
@@ -72,19 +72,19 @@ namespace project
                 canvas.DrawRect(shootsList[i].getX(), shootsList[i].getY(), shootsList[i].getX()+ shootsList[i].getW(), shootsList[i].getY()+ shootsList[i].getH(), p2);
                 if(shootsList[i].getDirection().Equals("left"))
                 {
-                    shootsList[i].setX(shootsList[i].getX() - 2);
+                    shootsList[i].setX(shootsList[i].getX() - 3);
                 }
                 else if (shootsList[i].getDirection().Equals("right"))
                 {
-                    shootsList[i].setX(shootsList[i].getX() + 2);
+                    shootsList[i].setX(shootsList[i].getX() + 3);
                 }
                 else if (shootsList[i].getDirection().Equals("down"))
                 {
-                    shootsList[i].setY(shootsList[i].getY() + 2);
+                    shootsList[i].setY(shootsList[i].getY() + 3);
                 }
                 else if (shootsList[i].getDirection().Equals("up"))
                 {
-                    shootsList[i].setY(shootsList[i].getY() - 2);
+                    shootsList[i].setY(shootsList[i].getY() - 3);
                 }
 
                 if(shootsList[i].getX()<0|| shootsList[i].getX()>canvas.Width)
@@ -160,16 +160,16 @@ namespace project
             {
                 for (int j = 0; j < enemyList.Count; j++)
                 {
-                    if(shootsList[i].getX()>enemyList[j].getX() && shootsList[i].getX() < enemyList[j].getX()+65)
+                    if(shootsList[i].getX()>enemyList[j].getX()-15 && shootsList[i].getX() < enemyList[j].getX()+65)
                     {
-                        if(shootsList[i].getY() > enemyList[j].getY() && shootsList[i].getY() < enemyList[j].getY() + 65)
+                        if(shootsList[i].getY() > enemyList[j].getY()-15 && shootsList[i].getY() < enemyList[j].getY() + 65)
                         {
                             shootsList.RemoveAt(i);
                             enemyList[j].setHP(enemyList[j].getHP()-1);
                             if (enemyList[j].getHP()==0)
                             {
                                 enemyList.RemoveAt(j);
-                                enemyList.Add(new Enemy(1, 2, 0, 0));
+                                enemyList.Add(new Enemy(1, 2, 20, 20));
                             }
                         }
                     }

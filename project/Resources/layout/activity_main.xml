@@ -15,6 +15,7 @@
         android:text="To The Game"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="120dp"
+        android:textSize="20dp"
         android:background="@android:color/holo_blue_dark"
     />
 
@@ -25,6 +26,7 @@
         android:text="Score Board"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="80dp"
+        android:textSize="20dp"
         android:background="@android:color/holo_blue_dark"
     />
 
